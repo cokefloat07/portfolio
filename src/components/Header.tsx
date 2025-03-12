@@ -18,40 +18,37 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b">
+    <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-sm border-b border-slate-800">
       <div className="container flex items-center justify-between h-16 px-4 md:px-6">
-        <a href="#home" className="text-xl font-semibold">
+        <a href="#home" className="text-xl font-semibold text-white">
           Portfolio
         </a>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
             >
               {item.name}
             </a>
           ))}
         </nav>
 
-        {/* Mobile Navigation Toggle */}
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="md:hidden text-slate-300 hover:text-white"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </Button>
 
-        {/* Mobile Navigation Menu */}
         <div
           className={cn(
-            "fixed inset-0 top-16 bg-background z-40 md:hidden transition-transform duration-300 ease-in-out",
+            "fixed inset-0 top-16 bg-slate-950/98 z-40 md:hidden transition-transform duration-300 ease-in-out",
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
@@ -60,7 +57,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="text-lg font-medium text-slate-300 hover:text-white transition-colors"
                 onClick={toggleMenu}
               >
                 {item.name}
