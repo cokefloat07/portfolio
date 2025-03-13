@@ -10,14 +10,14 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6">
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://github.com/cokefloat07"
               className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/anchit-chedge/"
               className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="LinkedIn"
             >
@@ -39,8 +39,8 @@ const Footer = () => {
             </a>
           </div>
           <div className="text-center text-sm text-muted-foreground">
-            <p>© {currentYear} Your Name. All Rights Reserved.</p>
-            <p>Designed and built with ❤️</p>
+            <p>© {currentYear} Anchit Chedge. All Rights Reserved.</p>
+            <p>Thankyou for visiting </p>
           </div>
         </div>
       </div>

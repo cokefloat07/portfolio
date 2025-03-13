@@ -4,21 +4,21 @@ import { Card, CardContent } from "@/components/ui/card";
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Frontend",
-      skills: ["HTML/CSS", "JavaScript", "TypeScript", "React", "Vue.js", "Tailwind CSS", "SASS"],
+      category: "Languages",
+      skills: ["HTML/CSS", "JavaScript", "Python", "Java", "C++"],
     },
     {
-      category: "Backend",
-      skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "Firebase", "REST API", "GraphQL"],
+      category: "Frameworks",
+      skills: ["Django", "Flask", "JDBC","Firebase","ReactJS"],
     },
     {
       category: "Tools & Others",
-      skills: ["Git", "Webpack", "Vite", "Docker", "AWS", "Figma", "Adobe XD"],
+      skills: ["Git", "Unity Player", "Blender", "Photoshop", "Figma", "Adobe XD"],
     },
   ];
 
   return (
-    <section id="skills" className="py-16 bg-muted/30">
+    <section id="skills" className="py-16 ">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-4 text-center">

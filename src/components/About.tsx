@@ -1,10 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import myImage from "@/assets/myimage.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-muted/30">
+    <section id="about" className="py-16">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-4 text-center">
@@ -16,34 +16,31 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="aspect-square relative overflow-hidden rounded-xl bg-muted">
-              {/* Replace with your image */}
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                Your Image Here
-              </div>
+            <img src={myImage} alt="My Image" className="w-full h-full object-cover" />
+
             </div>
 
             <div className="flex flex-col gap-6">
               <h3 className="text-2xl font-semibold">My Journey</h3>
               <p className="text-muted-foreground">
-                I'm a passionate developer with 3+ years of experience building web applications.
-                I specialize in creating user-friendly interfaces that are both beautiful and functional.
+              "As a passionate developer, I thrive on solving complex problems and continuously expanding my knowledge. I am always eager to learn new technologies, improve my skills, and push the boundaries of innovation to create impactful solutions."
               </p>
               <p className="text-muted-foreground">
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                or enjoying the outdoors.
+                When I'm not coding, you can find me exploring new technologies, playing football and video games,
+                or enjoying movies and webseries.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
                 <Card>
                   <CardContent className="p-4">
-                    <div className="text-4xl font-bold">3+</div>
-                    <div className="text-sm text-muted-foreground">Years Experience</div>
+                    <div className="text-4xl font-bold">2+</div>
+                    <div className="text-sm text-muted-foreground">Paper Published (Scopus)</div>
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardContent className="p-4">
-                    <div className="text-4xl font-bold">20+</div>
+                    <div className="text-4xl font-bold">10+</div>
                     <div className="text-sm text-muted-foreground">Projects Completed</div>
                   </CardContent>
                 </Card>
