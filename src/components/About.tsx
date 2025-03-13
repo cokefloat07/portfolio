@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import myImage from "@/assets/myimage.jpg";
+import myImage from "@/assets/myimage.png";
 
 const About = () => {
   return (
