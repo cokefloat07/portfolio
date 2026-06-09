@@ -333,7 +333,7 @@ export const projectsData = [
       'Built using FastAPI and React with real-time emissions tracking via CodeCarbon. ' +
       'Custom scoring algorithm weighs model accuracy, latency, and CO2 emissions. ' +
       'Supports Google Gemini, Mistral, and NVIDIA Qwen providers with fallback chains.',
-    image: 'public/assets/carbonemission.jpg',
+    image: process.env.PUBLIC_URL + '/assets/carbonemission.jpg',
     tags: ['Python', 'FastAPI', 'React', 'LLMs', 'CodeCarbon', 'Gemini', 'Mistral'],
     github: 'https://github.com/cokefloat07/final-techM-EDAI',
     live: 'https://green-model-advisor.vercel.app/',
@@ -356,7 +356,7 @@ export const projectsData = [
       'Built end-to-end RAG pipeline with semantic chunking, vector retrieval, and streaming ' +
       'LLM responses over Server-Sent Events. Provider-agnostic LLM layer supports both local ' +
       'Ollama and cloud-based Groq API. Deployed full stack at zero cost using Vercel + Render.',
-    image: 'public/assets/Socialrag.jpg',
+    image: process.env.PUBLIC_URL + '/assets/Socialrag.jpg',
     tags: ['FastAPI', 'React', 'ChromaDB', 'BGE Embeddings', 'Groq', 'Llama 3.3', 'RAG'],
     github: 'https://github.com/cokefloat07/social-bot',
     live: 'https://social-ai-one-inky.vercel.app/',
@@ -379,7 +379,7 @@ export const projectsData = [
       'Engineering a full-stack platform with AI-driven task automation, project insights, ' +
       'documentation generation, and predictive analytics. Collaborative code editor, ' +
       'AI debugging assistant, dynamic Gantt charts, and productivity tracking dashboard.',
-    image: 'public/assets/nexusai.jpg',
+    image: process.env.PUBLIC_URL + '/assets/nexusai.jpg',
     tags: ['React.js', 'Flask', 'MongoDB', 'AI', 'Gantt Charts'],
     github: 'https://github.com/cokefloat07/nexusai',
     live: 'https://nexusai-tawny.vercel.app/',

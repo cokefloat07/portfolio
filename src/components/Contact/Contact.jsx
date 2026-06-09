@@ -20,28 +20,39 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    // ✅ Using environment variables
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    // ✅ Check if env variables are loaded
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error('Email service not configured properly.');
+      setLoading(false);
+      return;
+    }
+
     try {
-      // Replace with your EmailJS credentials
       await emailjs.sendForm(
-        'service_jg7ideh',
-        'template_fd3lp9n',
+        serviceId,
+        templateId,
         formRef.current,
-        'xA4j-ACx38Tbk4GtB'
+        publicKey
       );
       toast.success('Message sent successfully! 🎉');
       formRef.current.reset();
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast.error('Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
+  // ---- Rest of your component stays EXACTLY the same ----
   return (
     <section id="contact" className="section contact">
-      {/* Background decoration */}
       <div className="contact-bg-gradient" />
-
       <div className="container">
         <motion.div
           ref={ref}
@@ -72,38 +83,36 @@ const Contact = () => {
           </motion.p>
 
           <div className="contact-grid">
-            {/* Contact Info */}
             <motion.div className="contact-info" variants={fadeInUp}>
               <h3 className="contact-info-title">Contact Information</h3>
               <p className="contact-info-desc">
-                Feel free to reach out through any of these channels. I typically respond within 24 hours.
+                Feel free to reach out through any of these channels. 
+                I typically respond within 24 hours.
               </p>
 
               <div className="contact-details">
                 <motion.div className="contact-detail" whileHover={{ x: 5 }}>
-                  <div className="contact-detail-icon">
-                    <FiMail />
-                  </div>
+                  <div className="contact-detail-icon"><FiMail /></div>
                   <div>
                     <span className="contact-detail-label">Email</span>
-                    <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
+                    <a href={`mailto:${personalInfo.email}`}>
+                      {personalInfo.email}
+                    </a>
                   </div>
                 </motion.div>
 
                 <motion.div className="contact-detail" whileHover={{ x: 5 }}>
-                  <div className="contact-detail-icon">
-                    <FiPhone />
-                  </div>
+                  <div className="contact-detail-icon"><FiPhone /></div>
                   <div>
                     <span className="contact-detail-label">Phone</span>
-                    <a href={`tel:${personalInfo.phone}`}>{personalInfo.phone}</a>
+                    <a href={`tel:${personalInfo.phone}`}>
+                      {personalInfo.phone}
+                    </a>
                   </div>
                 </motion.div>
 
                 <motion.div className="contact-detail" whileHover={{ x: 5 }}>
-                  <div className="contact-detail-icon">
-                    <FiMapPin />
-                  </div>
+                  <div className="contact-detail-icon"><FiMapPin /></div>
                   <div>
                     <span className="contact-detail-label">Location</span>
                     <span>{personalInfo.location}</span>
@@ -127,12 +136,10 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Decorative orbs */}
               <div className="contact-orb contact-orb-1" />
               <div className="contact-orb contact-orb-2" />
             </motion.div>
 
-            {/* Contact Form */}
             <motion.form
               ref={formRef}
               className="contact-form"
