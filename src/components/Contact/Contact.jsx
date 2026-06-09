@@ -23,10 +23,10 @@ const Contact = () => {
     try {
       // Replace with your EmailJS credentials
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_jg7ideh',
+        'template_fd3lp9n',
         formRef.current,
-        'YOUR_PUBLIC_KEY'
+        'xA4j-ACx38Tbk4GtB'
       );
       toast.success('Message sent successfully! 🎉');
       formRef.current.reset();
